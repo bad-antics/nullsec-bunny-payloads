@@ -1,50 +1,116 @@
 <div align="center">
 
-# 🐰 NullSec Bunny Payloads
+```
+ ██████╗ ██╗   ██╗███╗   ██╗███╗   ██╗██╗   ██╗    ██████╗  █████╗ ██╗   ██╗██╗      ██████╗  █████╗ ██████╗ ███████╗
+ ██╔══██╗██║   ██║████╗  ██║████╗  ██║╚██╗ ██╔╝    ██╔══██╗██╔══██╗╚██╗ ██╔╝██║     ██╔═══██╗██╔══██╗██╔══██╗██╔════╝
+ ██████╔╝██║   ██║██╔██╗ ██║██╔██╗ ██║ ╚████╔╝     ██████╔╝███████║ ╚████╔╝ ██║     ██║   ██║███████║██║  ██║███████╗
+ ██╔══██╗██║   ██║██║╚██╗██║██║╚██╗██║  ╚██╔╝      ██╔═══╝ ██╔══██║  ╚██╔╝  ██║     ██║   ██║██╔══██║██║  ██║╚════██║
+ ██████╔╝╚██████╔╝██║ ╚████║██║ ╚████║   ██║       ██║     ██║  ██║   ██║   ███████╗╚██████╔╝██║  ██║██████╔╝███████║
+ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝   ╚═╝   ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚══════╝
+                     [ BASH BUNNY MULTI-VECTOR ATTACKS | bad-antics ]
+```
 
-**Multi-Vector Attack Payloads for Bash Bunny**
+### 🐰 Bash Bunny Payloads for Advanced Penetration Testing
 
-[![QuickCreds](https://img.shields.io/badge/QuickCreds-Credential_Harvesting-f85149?style=for-the-badge)](#quickcreds)
-[![NetRecon](https://img.shields.io/badge/NetRecon-Network_Mapping-58a6ff?style=for-the-badge)](#netrecon)
-[![Exfil](https://img.shields.io/badge/Exfil-Data_Extraction-a371f7?style=for-the-badge)](#exfil)
+[![GitHub](https://img.shields.io/badge/GitHub-bad--antics-181717?style=for-the-badge&logo=github)](https://github.com/bad-antics)
+[![Hak5](https://img.shields.io/badge/Hak5-Bunny-FF6B35?style=for-the-badge)](https://hak5.org)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
 </div>
 
-## ⚠️ Legal Disclaimer
+---
 
-**For authorized penetration testing only.**
+## ⚠️ Disclaimer
 
-## 📁 Payload Categories
+**FOR AUTHORIZED SECURITY TESTING ONLY.** These payloads require explicit authorization before use. Unauthorized deployment is illegal.
 
-| Category | Description | Attack Mode |
-|----------|-------------|-------------|
-| 🔑 **QuickCreds** | Credential harvesting via Responder | RNDIS + HID |
-| 🌐 **NetRecon** | Network enumeration and mapping | RNDIS |
-| 📤 **Exfil** | Data extraction to Bunny storage | STORAGE + HID |
-| 🔄 **Pivot** | Network pivoting and tunneling | RNDIS |
-| 🔒 **Persistence** | Establish persistent access | HID |
+---
 
-## 🚀 Quick Start
+## 🐰 Attack Modes
 
-1. Copy payload folder to Bash Bunny `/payloads/switch1/` or `/payloads/switch2/`
-2. Safely eject Bunny
-3. Insert into target with appropriate switch position
-4. LED indicates payload status
+### Switch Position 1 — QuickCreds
 
-## 📂 Structure
+| Payload | Description |
+|---------|-------------|
+| `quickcreds/` | Instant credential capture via Responder |
+| `hashgrab/` | NTLM hash extraction |
+| `kerberoast/` | Service ticket harvesting |
+
+### Switch Position 2 — NetRecon
+
+| Payload | Description |
+|---------|-------------|
+| `netrecon/` | Network enumeration & mapping |
+| `portscan/` | Multi-host port scanning |
+| `smb-enum/` | SMB share discovery |
+
+### Switch Position 3 — Exfiltration
+
+| Payload | Description |
+|---------|-------------|
+| `browser-dump/` | All browser credentials |
+| `wifi-keys/` | Stored wireless credentials |
+| `clipboard/` | Clipboard monitoring |
+
+---
+
+## 🔧 Attack Modes Reference
 
 ```
-payloads/
-├── quickcreds/     # Credential harvesting
-├── netrecon/       # Network reconnaissance  
-├── exfil/          # Data exfiltration
-├── pivot/          # Network pivoting
-└── persistence/    # Backdoor installation
+ATTACKMODE HID         # Keyboard emulation
+ATTACKMODE STORAGE     # USB mass storage
+ATTACKMODE RNDIS_ETHERNET  # Network adapter
+ATTACKMODE HID STORAGE     # Combo mode
 ```
 
-## 🔗 Related
+---
 
-- [NullSec Ducky Payloads](https://github.com/bad-antics/nullsec-ducky-payloads)
-- [NullSec Flipper Suite](https://github.com/bad-antics/nullsec-flipper-suite)
+## 🚀 Deployment
 
-**© 2024-2026 bad-antics**
+```bash
+# Structure
+/payloads/
+├── switch1/           # QuickCreds
+│   └── payload.txt
+├── switch2/           # NetRecon  
+│   └── payload.txt
+└── library/           # Shared scripts
+    └── tools/
+```
+
+1. Copy payload folder to Bunny
+2. Set switch to desired position
+3. Insert into target (authorized!)
+4. Watch LED for status
+
+---
+
+## 💡 LED Status
+
+| Color | Meaning |
+|-------|---------|
+| 🟢 Green | Ready |
+| 🔵 Blue | Running |
+| 🟡 Yellow | Waiting |
+| 🔴 Red | Error |
+| ⚪ White | Complete |
+
+---
+
+## 🔗 NullSec Hak5 Suite
+
+| Repo | Description |
+|------|-------------|
+| **[Ducky Payloads](https://github.com/bad-antics/nullsec-ducky-payloads)** | Rubber Ducky |
+| **[Bunny Payloads](https://github.com/bad-antics/nullsec-bunny-payloads)** | Bash Bunny (you are here) |
+| **[Flipper Suite](https://github.com/bad-antics/nullsec-flipper-suite)** | Flipper Zero tools |
+
+---
+
+<div align="center">
+
+**[GitHub](https://github.com/bad-antics)** • **[NullSec](https://github.com/bad-antics/nullsec)** • **[Issues](https://github.com/bad-antics/nullsec-bunny-payloads/issues)**
+
+*Part of the NullSec Framework*
+
+</div>
