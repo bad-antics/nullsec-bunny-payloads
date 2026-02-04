@@ -1,0 +1,15 @@
+#!/bin/bash
+# NetRecon - Network Reconnaissance
+# Author: bad-antics
+
+LED SETUP
+ATTACKMODE RNDIS_ETHERNET
+GET TARGET_IP
+
+LED ATTACK
+mkdir -p /root/loot/netrecon
+nmap -sn $TARGET_IP/24 -oN /root/loot/netrecon/hosts.txt
+nmap -sV -sC $TARGET_IP -oN /root/loot/netrecon/services.txt
+
+LED FINISH
+sync
